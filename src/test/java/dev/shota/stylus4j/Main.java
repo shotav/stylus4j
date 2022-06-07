@@ -13,8 +13,7 @@ public class Main {
 
     private static String load(String name) throws Exception {
         final var stream = Main.class.getClassLoader().getResourceAsStream(name);
-        final var string = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
-        return string;
+        return new String(stream.readAllBytes(), StandardCharsets.UTF_8);
     }
 
 }
