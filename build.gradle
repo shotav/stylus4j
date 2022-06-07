@@ -1,0 +1,38 @@
+plugins {
+    id "java"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+sourceSets {
+    main {
+        java {
+            resources {
+                srcDirs("vendor/rjs/dist", "vendor/stylus/lib")
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    archiveFileName = project.name.toLowerCase() + ".jar"
+    duplicatesStrategy = "include"
+    manifest {
+        attributes "Implementation-Version": project.version
+    }
+    from {
+        configurations.compileClasspath.filter{ it.exists() }.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+dependencies {
+    implementation group: "org.mozilla", name: "rhino", version: "1.7.14"
+    testImplementation group: "org.junit.jupiter", name: "junit-jupiter-api", version: "5.9.0-M1"
+}
