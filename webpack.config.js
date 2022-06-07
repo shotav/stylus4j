@@ -1,5 +1,4 @@
 module.exports = {
-    name: "stylus4j",
     target: "node",
     mode: "production",
     entry: "./src/main/javascript/stylus4j.js",
@@ -15,6 +14,6 @@ module.exports = {
         ]
     },
     output: {
-        filename: "[name].js"
+        filename: "stylus4j.js"
     }
 }

@@ -1,2 +1,3 @@
-const stylus = require("stylus");
+import stylus from "stylus";
+
 stylus.version;

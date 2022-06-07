@@ -1,13 +1,12 @@
 {
   "name": "stylus4j",
-  "version": "1.0.0",
   "description": "Expressive, dynamic, robust CSS.",
   "scripts": {
     "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PryosCode/stylus4j.git"
+    "url": "https://github.com/PryosCode/stylus4j.git"
   },
   "keywords": [
     "css",
@@ -19,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/PryosCode/stylus4j/issues"
   },
-  "homepage": "https://github.com/PryosCode/stylus4j#readme",
+  "homepage": "https://github.com/PryosCode/stylus4j",
   "dependencies": {
     "stylus": "^0.58.1"
   },
