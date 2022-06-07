@@ -1,4 +1,4 @@
-package net.pryoscode.stylus4j;
+package dev.shota.stylus4j;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Function;

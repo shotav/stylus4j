@@ -1,4 +1,4 @@
-package net.pryoscode.stylus4j;
+package dev.shota.stylus4j;
 
 import org.junit.jupiter.api.Assertions;
 import java.nio.charset.StandardCharsets;
