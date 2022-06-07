@@ -1,11 +1,14 @@
 package net.pryoscode.stylus4j;
 
 import org.mozilla.javascript.Context;
+import org.mozilla.javascript.ScriptableObject;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
 public class Stylus {
+
+    static String css;
 
     private Stylus() {}
 
@@ -17,13 +20,15 @@ public class Stylus {
 
     public static String compile(String styl) throws Exception {
         final var context = Context.enter();
-        final var scope = context.initStandardObjects();
+        final var scope = context.initStandardObjects(new Hooks(), true);
 
-        final var result = context.evaluateReader(scope, new InputStreamReader(Stylus.class.getClassLoader().getResourceAsStream("stylus4j.js")), "javascript/stylus4j.js", 1, null);
-        System.out.println(Context.toString(result));
+        scope.defineFunctionProperties(Hooks.NAMES, scope.getClass(), ScriptableObject.DONTENUM);
+        scope.defineProperty("styl", styl, ScriptableObject.DONTENUM);
 
-        context.exit();
-        return styl;
+        context.evaluateReader(scope, new InputStreamReader(Stylus.class.getClassLoader().getResourceAsStream("stylus4j.js")), "stylus4j.js", 1, null);
+
+        Context.exit();
+        return css;
     }
 
 }
