@@ -1,6 +1,0 @@
-[submodule "vendor/rjs"]
-	path = vendor/rjs
-	url = https://github.com/requirejs/r.js.git
-[submodule "vendor/stylus"]
-	path = vendor/stylus
-	url = https://github.com/stylus/stylus

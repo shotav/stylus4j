@@ -11,7 +11,7 @@ sourceSets {
     main {
         java {
             resources {
-                srcDirs("vendor/rjs/dist", "vendor/stylus/lib")
+                srcDir "dist"
             }
         }
     }

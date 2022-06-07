@@ -19,7 +19,8 @@ public class Stylus {
         final var context = Context.enter();
         final var scope = context.initStandardObjects();
 
-        context.evaluateReader(scope, new InputStreamReader(Stylus.class.getClassLoader().getResourceAsStream("stylus4j.js")), "stylus4j.js", 1, null);
+        final var result = context.evaluateReader(scope, new InputStreamReader(Stylus.class.getClassLoader().getResourceAsStream("stylus4j.js")), "javascript/stylus4j.js", 1, null);
+        System.out.println(Context.toString(result));
 
         context.exit();
         return styl;
