@@ -11,7 +11,7 @@ sourceSets {
     main {
         java {
             resources {
-                srcDir "dist"
+                srcDir "stylus/lib"
             }
         }
     }

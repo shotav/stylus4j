@@ -1,0 +1,4 @@
+[submodule "Stylus"]
+	path = stylus
+	url = https://github.com/stylus/stylus.git
+	branch = client
