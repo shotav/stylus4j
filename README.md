@@ -18,11 +18,19 @@ String css = Stylus.compile("body a { background: black; }");
 
 ### Maven
 
-_Coming Soon_
+```xml
+<dependency>
+    <groupId>dev.shota</groupId>
+    <artifactId>stylus4j</artifactId>
+    <version>X.X.X</version>
+</dependency>
+```
 
 ### Gradle
 
-_Coming Soon_
+```groovy
+implementation group: 'dev.shota', name: 'stylus4j', version: 'X.X.X'
+```
 
 ## License
 
