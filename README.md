@@ -4,7 +4,9 @@ Expressive, dynamic, robust CSS.
 
 ## Example
 
-_Coming Soon_
+```java
+String css = Stylus.compile("body a { background: black; }");
+```
 
 ## Download
 

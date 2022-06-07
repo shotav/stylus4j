@@ -13,10 +13,9 @@ public class Hooks extends ScriptableObject {
     protected Hooks() {}
 
     public static void load(Context cx, Scriptable thisObj, Object[] args, Function funObj) throws Exception {
-        Hooks shell = (Hooks) getTopLevelScope(thisObj);
-        for (int i = 0; i < args.length; i++) {
-                shell.processSource(cx, Context.toString(args[i]));
-        }
+        final var hooks = (Hooks) getTopLevelScope(thisObj);
+        for (Object o : args)
+            hooks.processSource(cx, Context.toString(o));
     }
 
     public static void send(Context cx, Scriptable thisObj, Object[] args, Function funObj) {
