@@ -11,7 +11,8 @@ sourceSets {
     main {
         java {
             resources {
-                srcDir "stylus/lib"
+                srcDir "stylus"
+                include "stylus*.js"
             }
         }
     }
