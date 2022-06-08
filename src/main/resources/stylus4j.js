@@ -1,5 +1,3 @@
-load("stylus.js");
-
-stylus.render(styl, {}, (err, css) => {
+stylus.render(code, {}, (err, css) => {
     send(css);
 });
