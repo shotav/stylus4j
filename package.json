@@ -1,0 +1,25 @@
+{
+  "name": "stylus4j",
+  "description": "Expressive, dynamic, robust CSS.",
+  "scripts": {
+    "build": "mkdirp dist && cd stylus && node ./support/compile.js | cat support/polyfills.js support/head.js - support/foot.js > ../dist/stylus.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PryosCode/stylus4j.git"
+  },
+  "keywords": [
+    "css",
+    "java",
+    "stylus"
+  ],
+  "author": "shota",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/PryosCode/stylus4j/issues"
+  },
+  "homepage": "https://github.com/PryosCode/stylus4j",
+  "devDependencies": {
+    "mkdirp": "^1.0.4"
+  }
+}
