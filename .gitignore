@@ -1,5 +1,6 @@
-.gradle
 .idea
-build
 dist
+node
 node_modules
+target
+stylus4j.iml

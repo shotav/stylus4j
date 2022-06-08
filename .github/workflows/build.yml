@@ -2,22 +2,47 @@ name: Build
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
   pull_request:
-    branches: [ "master" ]
-
-permissions:
-  contents: read
+    branches:
+      - master
 
 jobs:
   build:
-
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK
+
+    - name: Checkout GitHub
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - name: Setup Java
       uses: actions/setup-java@v3
       with:
         java-version: 17
         distribution: temurin
+
+    - name: Build Maven
+      env:
+        GPG_KEY: ${{ secrets.GPG_KEY }}
+        GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+        OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+      run: |
+        echo -n "$GPG_KEY" | base64 --decode | gpg --batch --import
+        gpg --keyserver keyserver.ubuntu.com --send-keys $(gpg --list-public-keys --with-colons | sed -ne '/^pub:/,/^fpr:/ { /^fpr:/ p }' | cut -d: -f10)
+        chmod +x mvnw
+        ./mvnw -s settings.xml deploy
+        echo VERSION=$(./mvnw -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec) >> $GITHUB_ENV
+
+    - name: Release GitHub
+      uses: softprops/action-gh-release@v1
+      with:
+        files: target/*.jar
+        tag_name: v${{ env.VERSION }}
+        fail_on_unmatched_files: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
