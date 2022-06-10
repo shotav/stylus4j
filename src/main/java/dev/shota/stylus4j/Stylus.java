@@ -18,10 +18,8 @@ public class Stylus {
     private Stylus() {}
 
     private static void init(Context context) throws IOException {
-        if (stylus == null || stylus4j == null) {
-            stylus = context.compileString(read("stylus.js"), "stylus.js", 1, null);
-            stylus4j = context.compileString(read("stylus4j.js"), "stylus4j.js", 1, null);
-        }
+        if (stylus == null) stylus = context.compileString(read("stylus.js"), "stylus.js", 1, null);
+        if (stylus4j == null) stylus4j = context.compileString(read("stylus4j.js"), "stylus4j.js", 1, null);
     }
 
     public static String compile(File file) throws IOException {
@@ -55,7 +53,8 @@ public class Stylus {
     }
 
     private static String read(String file) throws IOException {
-        final var stream = Stylus.class.getClassLoader().getResourceAsStream(file);
+        final var path = String.format("stylus4j/%s", file);
+        final var stream = Stylus.class.getClassLoader().getResourceAsStream(path);
         return new String(stream.readAllBytes(), StandardCharsets.UTF_8);
     }
 

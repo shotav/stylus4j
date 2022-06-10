@@ -1,25 +1,34 @@
 {
   "name": "stylus4j",
   "description": "Expressive, dynamic, robust CSS.",
-  "scripts": {
-    "build": "mkdirp dist && cd stylus && node ./support/compile.js | cat support/polyfills.js support/head.js - support/foot.js > ../dist/stylus.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/PryosCode/stylus4j.git"
-  },
   "keywords": [
     "css",
     "java",
     "stylus"
   ],
-  "author": "shota",
-  "license": "Apache-2.0",
+  "homepage": "https://github.com/PryosCode/stylus4j",
   "bugs": {
     "url": "https://github.com/PryosCode/stylus4j/issues"
   },
-  "homepage": "https://github.com/PryosCode/stylus4j",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "shota",
+    "email": "contact@shota.dev",
+    "url": "https://shota.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PryosCode/stylus4j.git"
+  },
+  "scripts": {
+    "build": "mkdirp dist/stylus4j && cd stylus && node ./support/compile.js | cat support/polyfills.js support/head.js - support/foot.js > ../dist/stylus4j/stylus.js"
+  },
   "devDependencies": {
     "mkdirp": "^1.0.4"
-  }
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "private": true
 }
