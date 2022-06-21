@@ -4,17 +4,17 @@
 
     <groupId>dev.shota</groupId>
     <artifactId>stylus4j</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3</version>
 
     <name>stylus4j</name>
     <description>Expressive, dynamic, robust CSS.</description>
-    <url>https://github.com/shotadotdev/stylus4j</url>
+    <url>https://github.com/shotav/stylus4j</url>
     <packaging>jar</packaging>
 
     <licenses>
         <license>
             <name>Apache License 2.0</name>
-            <url>https://github.com/shotadotdev/stylus4j/blob/master/LICENSE</url>
+            <url>https://github.com/shotav/stylus4j/blob/master/LICENSE</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -29,9 +29,9 @@
     </developers>
 
     <scm>
-        <url>https://github.com/shotadotdev/stylus4j</url>
-        <connection>scm:git:git://github.com/shotadotdev/stylus4j.git</connection>
-        <developerConnection>scm:git:git@github.com:shotadotdev/stylus4j.git</developerConnection>
+        <url>https://github.com/shotav/stylus4j</url>
+        <connection>scm:git:git://github.com/shotav/stylus4j.git</connection>
+        <developerConnection>scm:git:git@github.com:shotav/stylus4j.git</developerConnection>
     </scm>
 
     <properties>
