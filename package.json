@@ -21,7 +21,7 @@
     "url": "https://github.com/shotav/stylus4j.git"
   },
   "scripts": {
-    "build": "mkdir dist/stylus4j && cd stylus && node ./support/compile.js | cat support/polyfills.js support/head.js - support/foot.js > ../dist/stylus4j/stylus.js"
+    "build": "mkdir -p dist/stylus4j && cd stylus && node ./support/compile.js | cat support/polyfills.js support/head.js - support/foot.js > ../dist/stylus4j/stylus.js"
   },
   "engines": {
     "node": ">=18.0.0",
