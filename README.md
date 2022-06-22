@@ -10,11 +10,11 @@ String css = Stylus.compile("body a { background: black; }");
 
 ## Download
 
-[![Version](https://img.shields.io/github/v/release/PryosCode/stylus4j?label=Version)](https://github.com/PryosCode/stylus4j/tags)
+[![Version](https://img.shields.io/github/v/release/shotav/stylus4j?label=Version)](https://github.com/shotav/stylus4j/tags)
 
 ### JAR
 
-[Releases](https://github.com/PryosCode/stylus4j/releases)
+[Releases](https://github.com/shotav/stylus4j/releases)
 
 ### Maven
 
@@ -34,4 +34,4 @@ implementation group: 'dev.shota', name: 'stylus4j', version: 'X.X.X'
 
 ## License
 
-[Apache License 2.0](https://github.com/PryosCode/stylus4j/blob/master/LICENSE)
+[Apache License 2.0](https://github.com/shotav/stylus4j/blob/master/LICENSE)

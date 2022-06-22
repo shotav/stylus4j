@@ -6,9 +6,9 @@
     "java",
     "stylus"
   ],
-  "homepage": "https://github.com/PryosCode/stylus4j",
+  "homepage": "https://github.com/shotav/stylus4j",
   "bugs": {
-    "url": "https://github.com/PryosCode/stylus4j/issues"
+    "url": "https://github.com/shotav/stylus4j/issues"
   },
   "license": "Apache-2.0",
   "author": {
@@ -18,13 +18,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PryosCode/stylus4j.git"
+    "url": "https://github.com/shotav/stylus4j.git"
   },
   "scripts": {
-    "build": "mkdirp dist/stylus4j && cd stylus && node ./support/compile.js | cat support/polyfills.js support/head.js - support/foot.js > ../dist/stylus4j/stylus.js"
-  },
-  "devDependencies": {
-    "mkdirp": "^1.0.4"
+    "build": "mkdir dist/stylus4j && cd stylus && node ./support/compile.js | cat support/polyfills.js support/head.js - support/foot.js > ../dist/stylus4j/stylus.js"
   },
   "engines": {
     "node": ">=18.0.0",

@@ -12,7 +12,7 @@ public class Hooks extends ScriptableObject {
     protected Hooks() {}
 
     public static void send(Context cx, Scriptable thisObj, Object[] args, Function funObj) {
-        Stylus.css = (String) args[0];
+        Compiler.css = (String) args[0];
     }
 
     @Override
